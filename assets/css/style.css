@@ -1,0 +1,35 @@
+body {
+    
+    background: lightcoral;
+}
+
+header {
+    border: solid black 1px;
+}
+
+#mainBox {
+    margin-top: 2%;
+    border: solid black 1px;
+    background: white;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.row {
+    text-align: center;
+}
+
+.col-12-lg {
+    width: 100%;
+    padding: 30px;
+    background: lightblue;
+    border: solid black 1px;
+}
+
+.col-12-lg:hover {
+    background: rgb(125, 205, 231);
+}
+
+.styleQuestion:hover {
+    background: lightblue;
+}   
