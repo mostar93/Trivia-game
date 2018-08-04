@@ -7,6 +7,16 @@ header {
     border: solid black 1px;
 }
 
+#startGame {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+    padding: 15px;
+    background: lightblue;
+}
+
 #mainBox {
     margin-top: 2%;
     border: solid black 1px;

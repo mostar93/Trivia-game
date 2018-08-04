@@ -12,6 +12,11 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         <link rel="stylesheet"  href="assets/css/style.css">
+        <script
+                src="https://code.jquery.com/jquery-3.3.1.min.js"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+                crossorigin="anonymous">
+        </script>
 
     </head>
     <body style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">
@@ -20,8 +25,20 @@
                 <h1 style="padding: 10px;">Music Trivia!</h1>
             </div>
         </header>
+        <div class="row" id="startDiv"style="display: flex; align-items: center; justify-content: center; margin-top: 25%">
+            
+                <button class="btn-lg" id="startGame">Start Game</button>
+                <button class="btn-lg" id="restartGame">Restart</button>
+           
+        </div> 
+        <div class="container" id="rightAnswer"><h3>Good Guess!</h3></div>
+        <div class="container" id="wrongAnswer"><h3>Wrong! the right answer was: <span id="rightAnswersSpan"></span></h3></div>
+        <div class="container" id="timesUp"><h3>Time's Up! The Right answer was: <span id="wrongAnswersSpan"></span></h3></div>
+        <div class="container" id="totalRight"><h3>You got this many right: <span id="totalRightSpan"></span></h3></div>
+        <div class="container" id="totalWrong"><h3>You got this many wrong:  <span id="totalWrongSpan"></span></h3></div>
         <div class="container" id="mainBox">
-            <span>Time Remaining: </span><br><br>
+               
+            <span>Time Remaining: <div id="countDown"></div> </span><br><br>
             <div class="row">
                 <div class="col-12-lg" id="styleQuestion" style="background: rgb(233, 184, 78);" >
                     <div class="questionText" id="question">Question</div>
