@@ -83,6 +83,7 @@ function reset(){
     $("#wrongAnswer").hide();
     $("#timesUp").hide();
     $("#totalRight").hide();
+    $("#totalWrong").hide();
 }
 
 function setQuestion(){
@@ -120,7 +121,7 @@ function run() {
                 $("#totalRight").hide();
                 $("#totalWrong").hide();
 
-            }, 1000)
+            }, 2000)
             setTimeout(function(){              
 
             // in order to show the total right and totla wrong, I think I need to nest 2 setTimout function inside of the if else statement. One set at 2 seconds that displays my correct right and wrong answer, and the another that activates another 2-3 seconds later that gives me the restart option.
@@ -129,16 +130,20 @@ function run() {
                     $("#timesUp").hide();
                     $("#mainBox").hide();
                     $("#restartGame").show();
-
-                    alert("right answers: " + correct);
-                    alert("wrong anwers: " + wrong);
+                    $("#rightAnswer").hide();
+                    $("#totalRight").show();
+                    $("#totalWrong").show();
+                    $("#totalRightSpan").text(correct)
+                    $("#totalWrongSpan").text(wrong);
+                    // alert("right answers: " + correct);
+                    // alert("wrong anwers: " + wrong);
                     stop();
                 } else {
                     reset();
                     setQuestion();
                     run();
                     }
-            }, 4000)
+            }, 3000)
         } 
     }
 }
@@ -174,14 +179,30 @@ $(".text").on("click", function(){
     }
         console.log(myChoice);
         finish++;
-        if (finish === 3) {
-            alert("game over");
-            $("#mainBox").hide();
-            $("#restartGame").show();
+        if (finish === questions.length) {
+            setTimeout(function(){              
 
-            alert("right answers: " + correct);
-            alert("wrong anwers: " + wrong);
-            stop();
+                // in order to show the total right and totla wrong, I think I need to nest 2 setTimout function inside of the if else statement. One set at 2 seconds that displays my correct right and wrong answer, and the another that activates another 2-3 seconds later that gives me the restart option.
+    
+                    if (finish === questions.length) {
+                        $("#timesUp").hide();
+                        $("#mainBox").hide();
+                        $("#restartGame").show();
+                        $("#rightAnswer").hide();
+                        $("#wrongAnswer").hide();
+                        $("#totalRight").show();
+                        $("#totalWrong").show();
+                        $("#totalRightSpan").text(correct)
+                        $("#totalWrongSpan").text(wrong);
+                        // alert("right answers: " + correct);
+                        // alert("wrong anwers: " + wrong);
+                        stop();
+                    } else {
+                        reset();
+                        setQuestion();
+                        run();
+                        }
+                }, 3000)
         }
 })
 
@@ -190,51 +211,6 @@ $(".text").on("click", function(){
 
 
 
-// $(document).ready(function (){
-//     $("#mainBox").hide();
-//     $("#rightAnswer").hide();
-//     $("#wrongAnswer").hide();
-//     $("#timesUp").hide();
-//     $("#startGame").show();
-//     $("#restartGame").hide();
-//     $("#startGame").on('click',function(){
-//         $("#startDiv").css("margin-top", "0")
-//         $("#startGame").hide();
-//         $("#mainBox").show();
-//         setQuestion();
-//         run();
-//     })
-//     $("#restartGame").on('click',function(){
-//         $("#startDiv").css("margin-top", "0")
-//         $("#restartGame").hide();
-//         $("#mainBox").show();
-//         finish = 0;
-//         correct = 0;
-//         wrong = 0;
-//         reset();
-//         setQuestion();
-//         run();
-//     })
-// })
-
-
-    
-    
-
-
-// })
-
-// this function randomly chooses a question package from the questions array and sends them out to their appropriate boxes
-
-// // test function shows that we can tell when the right answer string is chosen
-
-
-// // if (questions[0].rightAnswer === questions[0].possibleAnswers[1]){
-// //     // console.log("im smart!");
-// //     // console.log(theChoice[0].choice.innerHTML);
-// }
-
-// sets wrong or right 
 
 
 
